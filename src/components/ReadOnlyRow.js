@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
@@ -9,13 +9,18 @@ const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
       <td>{contact.email}</td>
       <td>
         <button
+          className="bun"
           type="button"
           onClick={(event) => handleEditClick(event, contact)}
         >
-          Edit
+          <i class="fa-solid fa-pencil"></i> Edit
         </button>
-        <button type="button" onClick={() => handleDeleteClick(contact.id)}>
-          Delete
+        <button
+          type="button"
+          className="bun"
+          onClick={() => handleDeleteClick(contact.id)}
+        >
+          <i class="fa-solid fa-trash"></i> Delete
         </button>
       </td>
     </tr>
